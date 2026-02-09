@@ -2,10 +2,22 @@
   max-width: 413px;
 }
 
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card__image{
   height: 413px;
   width: 413px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .card__content{
@@ -22,10 +34,15 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
-  opacity: 0.4;
+  opacity: 0.8;
   border: none;
   cursor: pointer;
-}
+  }
+
+  .card__like-btn:hover{
+    opacity: 1;
+    transition: opacity 150ms ease;
+  }
 
 @media screen and (max-width: 627px) {
   .card__image{

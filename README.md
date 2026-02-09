@@ -37,7 +37,7 @@ images/6-photo-by-moritz-feldmann-from-pexels.jpg
   
 * GitHub Link
 
-
+https://badr-hue.github.io/se_project_spots/
 
 * Video Link
 
