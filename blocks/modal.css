@@ -13,6 +13,8 @@
 
 .modal_is-opened {
   visibility: visible;
+  background: #00000080;
+
 }
 
 .modal__container {
