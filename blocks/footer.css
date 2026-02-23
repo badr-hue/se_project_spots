@@ -1,12 +1,10 @@
 .footer {
   background-color: #FCF5E5;
-  width: 104;
-  height: 16;
-  top: 1340px;
-  left: 668px;
+  width: 104px;
+  height: 16px;
   opacity: 1;
   padding: 60px 0;
-  flex: display;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -14,7 +12,6 @@
 
 .footer__copyright {
   color: rgba(33, 33, 33, 0.7);
-  font-size: 14px;
   text-align: center;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 400;

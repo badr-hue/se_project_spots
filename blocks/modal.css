@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity:0;
+  opacity: 0;
   transition:visibility 0s linear 0.5s,opacity 0.5s linear;
 
 }
@@ -17,7 +17,7 @@
 .modal_is-opened {
   visibility: visible;
   background: #00000080;
-  opacity:1;
+  opacity: 1;
   transition:visibility 0s linear 0s,opacity 0.5s linear;
 
 }
@@ -42,14 +42,17 @@
   cursor: pointer;
 }
 
+modal__close-btn:hover{
+  opacity: 1;
+}
+
 .modal__title{
   margin: 0 0 32px;
   font-family: Poppins;
   font-weight: 500;
-  font-style: Medium;
+  font-style: normal;
   font-size: 32px;
   line-height: 1;
-  letter-spacing: 0%;
   color: #212121;
 }
 
@@ -64,10 +67,9 @@
   display: block;
   font-weight: 500;
   font-family: Poppins;
-  font-style: Medium;
+  font-style: normal;
   font-size: 16px;
   line-height: 1.1;
-  letter-spacing: 0%;
   color: #212121B2;
 
 }
@@ -81,10 +83,9 @@
   border-radius: 8px;
   font-family: Poppins;
   font-weight: 500;
-  font-style: Medium;
+  font-style: normal;
   font-size: 20px;
   line-height: 100%;
-  letter-spacing: 0%;
   color: #212121;
 }
 
