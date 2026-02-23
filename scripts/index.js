@@ -49,5 +49,5 @@ function handleAddCardSubmit(evt) {
   newPostModal.classList.remove("modal_is-opened");
 }
 
-profileFormElement.addEventListener('submit', handleProfileFormSubmit);
+editProfileForm.addEventListener('submit', handleProfileFormSubmit);
 newPostForm.addEventListener('submit', handleAddCardSubmit);
