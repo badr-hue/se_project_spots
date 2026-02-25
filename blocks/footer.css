@@ -4,10 +4,9 @@
   height: 16px;
   opacity: 1;
   padding: 60px 0;
-  display: flex;
+  display: flexb;
   justify-content: center;
   align-items: center;
-
 }
 
 .footer__copyright {
