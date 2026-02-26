@@ -1,7 +1,7 @@
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-const editProfileForm = document.forms["edit-profile-form"];
+const editProfileForm = editProfileModal.querySelector(".modal__form");
 
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
 const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
@@ -58,7 +58,7 @@ function handleAddCardSubmit(evt) {
 
   evt.preventDefault();
 
-  // Log both input values to the console.
+
   console.log(newPostCardImageLink.value);
   console.log(newPostCardCaption.value);
 
