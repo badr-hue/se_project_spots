@@ -106,7 +106,7 @@
 
 @media screen and (max-width: 627px) {
   .modal__container {
-    width: 300px;
+    width: 100%;
     padding: 24px 16px;
     margin: 16px;
     border-radius: 16px;
@@ -114,7 +114,7 @@
   }
 
   .modal__input {
-    width: 276px;
+    width: 100%;
   }
 
   .modal__submit-btn {

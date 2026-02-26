@@ -14,8 +14,8 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
-const newPostCardImageLink = newPostModal.querySelector("#card-image-input.modal__input[type='URL']");
-const newPostCardCaption = newPostModal.querySelector("#card-caption-input.modal__input[type='text']");
+const newPostCardImageLink = newPostModal.querySelector("#card-image-input");
+const newPostCardCaption = newPostModal.querySelector("#card-description-input");
 
 
 
