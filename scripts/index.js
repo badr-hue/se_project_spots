@@ -6,19 +6,18 @@ const editProfileForm = document.forms["edit-profile-form"];
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
 const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
+const profileNameEl = document.querySelector(".profile__name");
+const profileDescriptionEl = document.querySelector(".profile__description");
+
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
-const newPostCardImageLink = newPostModal.querySelector("#card-image-input");
-//const newPostDescriptionInput = newPostModal.querySelector("#card-description-input");
+const newPostCardImageLink = newPostModal.querySelector("#card-image-input.modal__input[type='URL']");
+const newPostCardCaption = newPostModal.querySelector("#card-caption-input.modal__input[type='text']");
 
 
-const profileNameEl = document.querySelector(".profile__name");
-const profileDescriptionEl = document.querySelector(".profile__description");
-const newPostImageLinkEl = document.querySelector(".card__image");
-const newPostDescriptionEl = document.querySelector("#card-description-input");
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -56,13 +55,16 @@ function handleProfileFormSubmit(evt) {
 }
 
 function handleAddCardSubmit(evt) {
+
   evt.preventDefault();
-  newPostImageLinkEl.src= newPostCardImageLink.value;
-  newPostDescriptionEl.textContent = newPostDescriptionEl.value;
-  console.log(newPostImageLinkEl.textContent);
-  console.log(newPostDescriptionEl.textContent);
+
+  // Log both input values to the console.
+  console.log(newPostCardImageLink.value);
+  console.log(newPostCardCaption.value);
+
   closeModal(newPostModal);
 }
 
+
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
-newPostForm.addEventListener("submit", handleAddCardSubmit);
+newPostForm.addEventListener("submit",handleAddCardSubmit);
