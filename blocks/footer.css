@@ -1,9 +1,9 @@
 .footer {
   background-color: #FCF5E5;
-  width: 104px;
-  height: 16px;
+  width: 100%;
+  min-height: 136px;
   opacity: 1;
-  padding: 60px 0;
+  padding: 60px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
