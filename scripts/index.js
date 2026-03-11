@@ -44,7 +44,13 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostCardImageLink = newPostModal.querySelector("#card-image-input");
 const newPostCardCaption = newPostModal.querySelector("#card-description-input");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+const previewModalImage = previewModal.querySelector(".modal__image");
+const previewModalCaption = previewModal.querySelector(".modal__caption");
 
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -85,17 +91,52 @@ function handleAddCardSubmit(evt) {
 
   evt.preventDefault();
 
-
-  console.log(newPostCardImageLink.value);
-  console.log(newPostCardCaption.value);
+  const inputValues = getCardElement({
+    name: newPostCardCaption.value,
+    link: newPostCardImageLink.value
+  });
+  cardsList.prepend(inputValues);
 
   closeModal(newPostModal);
 }
 
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardImageEl = cardElement.querySelector(".card__image");
+  const cardTitleEl = cardElement.querySelector(".card__title");
+
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-btn_active");
+  });
+
+  const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
+  cardDeleteBtnEl.addEventListener("click", () => {
+    cardElement.closest(".card").remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    previewModalImage.src = data.link;
+    previewModalImage.alt = data.name;
+    previewModalCaption.textContent = data.name;
+    openModal(previewModal);
+  });
+
+  previewModalCloseBtn.addEventListener("click", () => {
+    closeModal(previewModal);
+  });
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+  return cardElement;
+}
+
 initialCards.forEach(function(item) {
-  console.log(item.name);
-  console.log(item.link);
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
+
 
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 newPostForm.addEventListener("submit",handleAddCardSubmit);
