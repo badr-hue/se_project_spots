@@ -96,7 +96,7 @@ function handleAddCardSubmit(evt) {
     link: newPostCardImageLink.value
   });
   cardsList.prepend(inputValues);
-
+  evt.target.reset();
   closeModal(newPostModal);
 }
 
@@ -122,9 +122,7 @@ function getCardElement(data) {
     openModal(previewModal);
   });
 
-  previewModalCloseBtn.addEventListener("click", () => {
-    closeModal(previewModal);
-  });
+
 
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
@@ -140,3 +138,6 @@ initialCards.forEach(function(item) {
 
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 newPostForm.addEventListener("submit",handleAddCardSubmit);
+previewModalCloseBtn.addEventListener("click", () => {
+    closeModal(previewModal);
+  });
