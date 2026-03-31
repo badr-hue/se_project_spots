@@ -42,3 +42,9 @@ https://badr-hue.github.io/se_project_spots/
 * Video Link
 
 https://drive.google.com/file/d/1_kmIV27Aw25RaY8VF7l2q48NP-K720hT/view?usp=drivesdk
+
+
+# Project 9: Spots
+
+  Check out https://drive.google.com/file/d/1QuGGMcKNPfOqqdnJNLxLuoLHw6EWv6kI/view?usp=drive_link, where I describe my 
+ project and some challenges I faced while building it.
