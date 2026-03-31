@@ -107,8 +107,32 @@
   color: #212121;
 }
 
+.modal__input_type_error {
+  border: 1px solid #FF000099;
+ }
+
 .modal__input::placeholder {
   color: #2121214d;
+}
+
+.modal__input:hover {
+  border: 1px solid rgb(33, 33, 33);
+}
+
+.modal__input_type_error:hover {
+  border: 1px solid #FF0000B2;
+  opacity: 0.9;
+ }
+
+.modal__error {
+  height: 18px;
+  color: #FF0000B2;
+  font-size: 16px;
+  margin-top: 8px;
+  display: block;
+  font-family: Poppins;
+  font-weight: 500;
+  visibility: hidden;
 }
 
 .modal__submit-btn {
@@ -127,6 +151,19 @@
   background-color: #212121;
   opacity: 0.9;
   transition: background-color 150ms ease;
+}
+
+.modal__submit-btn_disabled {
+  width: 156px;
+  margin: 32px 0 0;
+  padding: 18px 0;
+  border: none;
+  border-radius: 8px;
+  background-color:  #212121;
+  color: #fff;
+  font-weight: 500;
+  cursor: default;
+  opacity: 0.5;
 }
 
 .modal__image-container {
