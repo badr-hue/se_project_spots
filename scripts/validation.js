@@ -12,6 +12,7 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector("#" + errorMsgId);
   inputElement.classList.add(config.inputErrorClass);
   errorElement.textContent = errorMessage;
+  errorElement.classList.add(config.errorClass);
 };
 
 const hideInputError = (formElement, inputElement, config) => {
@@ -19,6 +20,7 @@ const hideInputError = (formElement, inputElement, config) => {
   const errorElement = formElement.querySelector("#" + errorMsgId);
   inputElement.classList.remove(config.inputErrorClass);
   errorElement.textContent = "";
+  errorElement.classList.remove(config.errorClass);
 };
 
 const checkInputValidity = (formElement, inputElement, config) => {

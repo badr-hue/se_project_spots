@@ -63,15 +63,24 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
+function handleEscape(evt) {
+  const openedModal = document.querySelector(".modal_is-opened");
+  if (evt.key === 'Escape') {
+    closeModal(openedModal);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+   document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
 
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscape);
+}
 
- }
 
 editProfileBtn.addEventListener("click", function() {
   editProfileNameInput.value = profileNameEl.textContent;
@@ -83,32 +92,20 @@ editProfileBtn.addEventListener("click", function() {
 editProfileCloseBtn.addEventListener("click", function(evt) {
   closeModal(editProfileModal);
  if (evt.target === editProfileModal)
-      closeModal(editProfileModal);
+editProfileCloseBtn.addEventListener("click", function() {
+  closeModal(editProfileModal);
 });
-
-editProfileCloseBtn.addEventListener("keydown", function(evt) {
-
- if (evt.key === "Escape" ){
-      closeModal(editProfileModal);
-}
-});
-
-newPostBtn.addEventListener("click", function() {
   openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function() {
   closeModal(newPostModal);
   if (evt.target === newPostModal)
+newPostCloseBtn.addEventListener("click", function(evt) {
+  closeModal(newPostModal);
+  if (evt.target === newPostModal)
       closeModal(newPostModal);
-});
-
-newPostCloseBtn.addEventListener("keydown", function(evt) {
-  if (evt.key === "Escape") {
-    closeModal(newPostModal);
-  }
-});
-
+})});
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -171,11 +168,6 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 previewModalCloseBtn.addEventListener("click", () => {
     closeModal(previewModal);
-    if (evt.target === previewModal)      closeModal(previewModal);
 });
 
-previewModalCloseBtn.addEventListener("keydown", function(evt) {
-  if (evt.key === "Escape") {
-    closeModal(previewModal);
-  }
-});
+
