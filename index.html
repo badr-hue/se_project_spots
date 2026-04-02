@@ -61,13 +61,13 @@
         <form id="edit-profile-form" class="modal__form" novalidate>
           <label for="profile-name-input" class="modal__label">
             Name
-            <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name" required minlength="2" maxlength="40"/>
-            <span id="profile-name-input-error" class="modal__error">Please fill out this field.</span>
+            <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name" minlength="2" maxlength="40" required/>
+            <span id="profile-name-input-error" class="modal__error"></span>
           </label>
           <label for="profile-description-input" class="modal__label">
             Description
-            <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself" required minlength="2" maxlength="200"/>
-            <span id="profile-description-input-error" class="modal__error">Please lengthen this text to 2 characters or more (you are currently usina 1 character).</span>
+            <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself"  minlength="2" maxlength="200" required/>
+            <span id="profile-description-input-error" class="modal__error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
@@ -84,12 +84,12 @@
           <label for="card-image-input" class="modal__label">
             Image link
             <input id="card-image-input" type="url" class="modal__input" placeholder="Paste a link to the picture" required/>
-            <span id="card-image-input-error" class="modal__error">Please enter a URL.</span>
+            <span id="card-image-input-error" class="modal__error"></span>
           </label>
           <label for="card-description-input" class="modal__label">
             Caption
-            <input id="card-description-input" type="text" class="modal__input" placeholder="Type your caption" required minlength="2" maxlength="30"/>
-            <span id="card-description-input-error" class="modal__error">Please fill out this field.</span>
+            <input id="card-description-input" type="text" class="modal__input" placeholder="Type your caption" minlength="2" maxlength="30" required />
+            <span id="card-description-input-error" class="modal__error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
