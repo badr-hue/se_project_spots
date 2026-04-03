@@ -160,6 +160,8 @@ newPostModal.addEventListener("click", handleOverlayClick);
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 previewModal.addEventListener("click", handleOverlayClick);
 
+previewCloseBtn.addEventListener("click", () => closeModal(previewModal));
+
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
@@ -167,4 +169,3 @@ initialCards.forEach((item) => {
 });
 
 
-enableValidation(config);
