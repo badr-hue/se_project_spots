@@ -8,6 +8,7 @@ import closeIcon from "../images/close_icon.svg";
 
 import { enableValidation, validationConfig } from "../scripts/validation.js";
 import { resetValidation } from "../scripts/validation.js";
+import Api from "../utils/Api.js";
 
 const config = {
   formSelector: ".modal__form",
@@ -18,7 +19,7 @@ const config = {
   errorClass: "modal__error"
 };
 
-const initialCards = [
+/* const initialCards = [
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
@@ -43,8 +44,36 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg"
   }
-];
+]; */
 
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "27f6796b-35b4-40da-86a2-2e8faab88a23",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards()
+  .then((cards) => {
+    cards.forEach((item) => {
+      const cardElement = getCardElement(item);
+      cardsList.append(cardElement);
+    });
+  })
+  .catch(err => console.error("Error fetching initial cards:", err));
+
+  api.getAppInfo()
+  .then(([cards, userData]) => {
+    profileNameEl.textContent = userData.name;
+    profileDescriptionEl.textContent = userData.about;
+
+    cards.forEach((item) => {
+      const cardElement = getCardElement(item);
+      cardsList.append(cardElement);
+    });
+  })
+  .catch(err => console.error("Error fetching app info:", err));
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -142,7 +171,17 @@ function getCardElement(data) {
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  profileNameEl.textContent = editProfileNameInput.value;
+  api.editUserInfo({
+    name: editProfileNameInput.value,
+    about: editProfileDescriptionInput.value
+  })
+  .then((updatedUserInfo) => {
+    profileNameEl.textContent = updatedUserInfo.name;
+    profileDescriptionEl.textContent = updatedUserInfo.about;
+    closeModal(editProfileModal);
+  })
+  .catch(err => console.error("Error updating user info:", err));
+ profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
 }
@@ -164,7 +203,7 @@ function init() {
   setLocalImages();
 
 
-  initialCards.forEach((item) => {
+initialCards.forEach((item) => {
     const cardElement = getCardElement(item);
     cardsList.append(cardElement);
   });

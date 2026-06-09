@@ -9,26 +9,26 @@
     content="Welcome to Spots, an interactive social media web application where users can add and remove photos, like photos of other users, and make a few minor adjustments to their profile.">
   <meta name="keywords" content="social media, photos, interactive, user profiles, likes, spots">
   <meta name="author" content="Badr Labloul">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../src/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <div class="page">
     <header class="header">
-      <img src="./images/logo.svg" alt="Spot logo" class="header__logo">
+      <img src="../src/images/logo.svg" alt="Spot logo" class="header__logo">
     </header>
     <main class="content">
       <section class="profile page__section">
-        <img src="./images/avatar.jpg" alt="Bessie Coleman" class="profile__avatar">
+        <img src="../src/images/avatar.jpg" alt="Bessie Coleman" class="profile__avatar">
         <div class="profile__column">
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
           <button type="button" class="profile__edit-btn">
-            <img src="./images/edit_icon.svg" alt="Edit Icon" class="">Edit Profile
+            <img src="../src/images/edit_icon.svg" alt="Edit Icon" class="">Edit Profile
           </button>
         </div>
         <button type="button" class="profile__add-btn">
-          <img src="./images/plus_icon.svg" alt="Plus Icon" class="profile__add-icon">New Post
+          <img src="../src/images/plus_icon.svg" alt="Plus Icon" class="profile__add-icon">New Post
         </button>
       </section>
       <section class="cards page__section">
@@ -54,7 +54,7 @@
     <div class="modal" id="edit-profile-modal">
       <div class="modal__container">
         <button type="button" class="modal__close-btn">
-          <img src="./images/close_icon.svg" alt="Close Icon" class="modal__close-icon">
+          <img src="../src/images/close_icon.svg" alt="Close Icon" class="modal__close-icon">
         </button>
         <h2 class="modal__title">Edit profile</h2>
         <form id="edit-profile-form" class="modal__form" novalidate>
@@ -76,7 +76,7 @@
     <div class="modal" id="new-post-modal">
       <div class="modal__container">
         <button type="button" class="modal__close-btn">
-          <img src="./images/close_icon.svg" alt="Close Icon" class="modal__close-icon">
+          <img src="../src/images/close_icon.svg" alt="Close Icon" class="modal__close-icon">
         </button>
         <h2 class="modal__title">New Post</h2>
         <form id="card-form" class="modal__form"  novalidate>
@@ -97,6 +97,7 @@
     <div class="modal modal_type_preview" id="preview-modal">
       <div class="modal__image-container">
         <button type="button" class="modal__close-btn modal__close-btn_type_preview">
+          <img src="../src/images/close_icon.svg" alt="Close Icon" class="modal__close-icon">
         </button>
         <img src="#" alt="" class="modal__image">
         <p class="modal__caption"></p>
