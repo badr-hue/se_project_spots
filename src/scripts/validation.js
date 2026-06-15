@@ -1,3 +1,5 @@
+// scripts/validation.js
+
 export const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -31,7 +33,6 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 };
 
-
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
@@ -47,7 +48,8 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   }
 };
 
-const disableButton = (buttonElement, config) => {
+// ADDED: Export added here to satisfy imports inside index.js
+export const disableButton = (buttonElement, config) => {
   buttonElement.disabled = true;
   buttonElement.classList.add(config.inactiveButtonClass);
 };
@@ -75,12 +77,9 @@ const setEventListeners = (formElement, config) => {
   });
 };
 
-
 export const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
     setEventListeners(formElement, config);
   });
 };
-
-
