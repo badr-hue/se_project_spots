@@ -53,7 +53,7 @@ const previewCloseBtn = previewModal.querySelector(".modal__close-btn");
 
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
-const deleteCancelBtn = deleteModal.querySelector("#cancel-btn");
+const deleteCancelBtn = deleteModal.querySelector(".modal__submit-btn_type_cancel");
 
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
@@ -221,7 +221,7 @@ function setLocalImages() {
   const addBtnImg = newPostBtn.querySelector("img");
   if (addBtnImg) addBtnImg.src = plusIcon;
 
-  document.querySelectorAll(".modal__close-icon").forEach(icon => {
+  document.querySelectorAll(".modal__close-btn").forEach(icon => {
     icon.src = closeIcon;
   });
 }
