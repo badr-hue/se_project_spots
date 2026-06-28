@@ -162,7 +162,6 @@ function handleProfileFormSubmit(evt) {
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  submitBtn.disabled = true;
   setButtonText(submitBtn, true, "Save", "Saving...");
 
   api.getNewCard({
@@ -197,8 +196,7 @@ function handleAvatarSubmit(evt) {
     })
     .catch((err) => {
       console.error(err);
-      submitBtn.disabled = false;
-    })
+         })
     .finally(() => setButtonText(submitBtn, false, "Save", "Saving..."));
 }
 
@@ -245,6 +243,7 @@ editProfileBtn.addEventListener("click", () => {
 });
 
 newPostBtn.addEventListener("click", () => {
+  resetValidation(newPostForm, config);
   openModal(newPostModal);
 });
 
