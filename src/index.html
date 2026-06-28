@@ -15,37 +15,37 @@
 <body>
   <div class="page">
     <header class="header">
-      <img src="./images/logo.svg" alt="Spots logo" class="header__logo" />
+      <img src="#" alt="Spots logo" class="header__logo" />
     </header>
 
     <main class="content">
       <section class="profile page__section">
         <div class="profile__avatar-container">
-          <!-- Avatar edit button (pencil overlay) -->
+
           <button class="profile__avatar-btn" type="button">
-            <img src="./images/edit_icon.svg" alt="Edit avatar" class="profile__avatar-btn-icon" />
+            <img src="#" alt="Edit avatar" class="profile__avatar-btn-icon" />
           </button>
-          <img src="./images/avatar.jpg" alt="Bessie Coleman" class="profile__avatar" />
+          <img src="#" alt="Bessie Coleman" class="profile__avatar" />
         </div>
 
         <div class="profile__column">
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
           <button type="button" class="profile__edit-btn">
-            <img src="./images/edit_icon.svg" alt="Edit icon" />
+            <img src="#" alt="Edit icon" />
             Edit Profile
           </button>
         </div>
 
         <button type="button" class="profile__add-btn">
-          <img src="./images/plus_icon.svg" alt="Plus icon" />
+          <img src="#" alt="Plus icon" />
           New Post
         </button>
       </section>
 
       <section class="cards page__section">
        <ul class="cards__list">
-          <!-- Cards will be added dynamically via JS -->
+
           <template id="card-template">
             <li class="card">
               <button class="card__delete-btn" type="button"></button>
@@ -65,11 +65,10 @@
     </footer>
   </div>
 
-  <!-- Edit Profile Modal -->
   <div class="modal" id="edit-profile-modal">
     <div class="modal__container">
       <button type="button" class="modal__close-btn">
-        <img src="./images/close_icon.svg" alt="Close icon" />
+        <img src="#" alt="Close icon" />
       </button>
       <h2 class="modal__title">Edit profile</h2>
       <form id="edit-profile-form" class="modal__form" novalidate>
@@ -88,11 +87,10 @@
     </div>
   </div>
 
-  <!-- Add New Card Modal -->
   <div class="modal" id="new-post-modal">
     <div class="modal__container">
       <button type="button" class="modal__close-btn">
-        <img src="./images/close_icon.svg" alt="Close icon" />
+        <img src="#" alt="Close icon" />
       </button>
       <h2 class="modal__title">New post</h2>
       <form id="new-post-form" class="modal__form" novalidate>
@@ -111,11 +109,10 @@
     </div>
   </div>
 
-  <!-- Edit Avatar Modal -->
   <div class="modal" id="avatar-modal">
     <div class="modal__container">
       <button type="button" class="modal__close-btn">
-        <img src="./images/close_icon.svg" alt="Close icon" />
+        <img src="#" alt="Close icon" />
       </button>
       <h2 class="modal__title">Edit avatar</h2>
       <form id="edit-avatar-form" class="modal__form" novalidate>
@@ -129,11 +126,10 @@
     </div>
   </div>
 
-  <!-- Delete Confirmation Modal -->
   <div class="modal" id="delete-modal">
     <div class="modal__container">
       <button type="button" class="modal__close-btn">
-        <img src="./images/close_icon.svg" alt="Close icon" />
+        <img src="#" alt="Close icon" />
       </button>
       <h2 class="modal__title">Are you sure you want to delete this image?</h2>
       <form id="delete-form" class="modal__form">
@@ -143,17 +139,16 @@
     </div>
   </div>
 
-  <!-- Image Preview Modal -->
   <div class="modal modal_type_preview" id="preview-modal">
     <div class="modal__container modal__container_type_preview">
       <button type="button" class="modal__close-btn modal__close-btn_type_preview">
-        <img src="./images/close_icon.svg" alt="Close icon" />
+        <img src="#" alt="Close icon" />
       </button>
       <img src="" alt="" class="modal__image" />
       <p class="modal__caption"></p>
     </div>
   </div>
 
-  <script src="./pages/index.js" type="module" defer></script>
+  <!-- <script src="./pages/index.js" type="module" defer></script> -->
 </body>
 </html>

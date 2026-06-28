@@ -1,6 +1,5 @@
 import "./index.css";
 
-// Webpack Static Asset Mapping
 import logo from "../images/logo.svg";
 import avatarImg from "../images/avatar.jpg";
 import editIcon from "../images/edit_icon.svg";
@@ -20,17 +19,14 @@ const config = {
   errorClass: "modal__error"
 };
 
-// Target Core Display Items
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 const avatar = document.querySelector(".profile__avatar");
 
-// Target Interactive Triggers
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const newPostBtn = document.querySelector(".profile__add-btn");
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 
-// Target Form Windows
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
@@ -73,7 +69,6 @@ const api = new Api({
   },
 });
 
-// Window Overlay Animations
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscape);
@@ -97,7 +92,6 @@ function handleOverlayClick(evt) {
   }
 }
 
-// Assemble Post Element Components
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -138,7 +132,6 @@ function getCardElement(data) {
   return cardElement;
 }
 
-// Global Submission Triggers
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
@@ -177,7 +170,7 @@ function handleAddCardSubmit(evt) {
   })
   .catch((err) => {
     console.error(err);
-    submitBtn.disabled = false;
+
   })
   .finally(() => setButtonText(submitBtn, false, "Save", "Saving..."));
 }
@@ -218,7 +211,6 @@ function handleDeleteSubmit(evt) {
       });
 }
 
-// Map Webpack Imported Image Sources to HTML Nodes
 function setLocalImages() {
   document.querySelector(".header__logo").src = logo;
   avatar.src = avatarImg;
@@ -234,7 +226,6 @@ function setLocalImages() {
   });
 }
 
-// Wire Event Interfaces
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
@@ -269,11 +260,9 @@ newPostForm.addEventListener("submit", handleAddCardSubmit);
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 deleteForm.addEventListener("submit", handleDeleteSubmit);
 
-// Global Initial App Thread Engine
 function init() {
   setLocalImages();
 
-  // Clean, single unified data pipeline request chain
   api.getAppInfo()
     .then(([cards, userData]) => {
       profileNameEl.textContent = userData.name;

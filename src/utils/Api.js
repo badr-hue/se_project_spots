@@ -1,4 +1,3 @@
-// utils/Api.js
 
 export default class Api {
   constructor({ baseUrl, headers }) {
@@ -14,7 +13,6 @@ export default class Api {
   }
 
   _request(endpoint, options) {
-    // Ensures URLs don't accidentally double slash or swallow route blocks
     return fetch(`${this._baseUrl}${endpoint}`, options).then(this._checkResponse);
   }
 
@@ -48,7 +46,6 @@ export default class Api {
     });
   }
 
-  // Renamed to perfectly match the call signature in index.js
   editAvatarInfo(avatarUrl) {
     return this._request("/users/me/avatar", {
       method: "PATCH",
@@ -59,7 +56,6 @@ export default class Api {
     });
   }
 
-  // Adjusted casing to match api.getNewCard from index.js
   getNewCard({ name, link }) {
     return this._request("/cards", {
       method: "POST",

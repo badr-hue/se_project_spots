@@ -1,4 +1,3 @@
-// scripts/validation.js
 
 export const validationConfig = {
   formSelector: ".modal__form",
@@ -48,7 +47,6 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   }
 };
 
-// ADDED: Export added here to satisfy imports inside index.js
 export const disableButton = (buttonElement, config) => {
   buttonElement.disabled = true;
   buttonElement.classList.add(config.inactiveButtonClass);
