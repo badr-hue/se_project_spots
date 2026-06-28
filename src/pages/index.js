@@ -9,7 +9,7 @@ import closeIcon from "../images/close_icon.svg";
 
 import { enableValidation, resetValidation, disableButton } from "../scripts/validation.js";
 import Api from "../utils/Api.js";
-import { setButtonText } from "../utils/helpers.js";
+import { setButtonText } from "../utils/buttonLoading.js";
 
 const config = {
   formSelector: ".modal__form",
@@ -142,7 +142,7 @@ function getCardElement(data) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  setButtonText(submitBtn, true);
+  setButtonText(submitBtn, true, "Save", "Saving...");
 
   api.editUserInfo({
     name: editProfileNameInput.value,
@@ -153,15 +153,17 @@ function handleProfileFormSubmit(evt) {
     profileDescriptionEl.textContent = updatedUserInfo.about;
     closeModal(editProfileModal);
   })
-  .catch(console.error)
-  .finally(() => setButtonText(submitBtn, false));
+    .catch((err) => {
+    console.error(err);
+  })
+  .finally(() => setButtonText(submitBtn, false, "Save", "Saving..."));
 }
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
   submitBtn.disabled = true;
-  setButtonText(submitBtn, true);
+  setButtonText(submitBtn, true, "Save", "Saving...");
 
   api.getNewCard({
     name: newPostCaptionInput.value,
@@ -178,13 +180,13 @@ function handleAddCardSubmit(evt) {
     console.error(err);
     submitBtn.disabled = false;
   })
-  .finally(() => setButtonText(submitBtn, false));
+  .finally(() => setButtonText(submitBtn, false, "Save", "Saving..."));
 }
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  setButtonText(submitBtn, true);
+  setButtonText(submitBtn, true, "Save", "Saving...");
 
   api.editAvatarInfo(avatarInput.value)
     .then((data) => {
@@ -197,7 +199,7 @@ function handleAvatarSubmit(evt) {
       console.error(err);
       submitBtn.disabled = false;
     })
-    .finally(() => setButtonText(submitBtn, false));
+    .finally(() => setButtonText(submitBtn, false, "Save", "Saving..."));
 }
 
 function handleDeleteSubmit(evt) {
@@ -210,11 +212,12 @@ function handleDeleteSubmit(evt) {
       selectedCard.remove();
       closeModal(deleteModal);
     })
-    .catch(console.error)
+     .catch((err) => {
+      console.error(err);
+    })
     .finally(() => {
       setButtonText(submitBtn, false, "Delete", "Deleting...");
-      submitBtn.disabled = false;
-    });
+      });
 }
 
 // Map Webpack Imported Image Sources to HTML Nodes
@@ -246,6 +249,7 @@ newPostBtn.addEventListener("click", () => {
 });
 
 avatarModalBtn.addEventListener("click", () => {
+  resetValidation(avatarForm, config);
   openModal(avatarModal);
 });
 
