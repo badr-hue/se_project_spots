@@ -363,8 +363,9 @@ template {
   font-weight: 500;
   src: url(/fonts/Poppins-Medium.673ed42382ab264e0bf5.ttf) format("truetype");
 }
+
 .page {
-  background-color: #FCF5E5;
+  background-color: #fcf5e5;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   color: #212121;
   min-height: 100vh;
@@ -374,6 +375,7 @@ template {
   max-width: 1280px;
   margin: 0 auto;
 }
+
 .header {
   background-color: #ffffff;
   padding: 10px 0;
@@ -385,9 +387,11 @@ template {
   width: 94px;
   height: 26px;
 }
+
 .content {
   padding: 0 16px;
 }
+
 .profile {
   display: flex;
   padding: 34px 0 20px;
@@ -440,7 +444,6 @@ template {
   -webkit-box-orient: vertical;
 }
 
-
 .profile__edit-btn {
   font-size: 16px;
   line-height: 1;
@@ -454,7 +457,6 @@ template {
   gap: 8px;
   opacity: 0.7;
   cursor: pointer;
-
 }
 
 .profile__edit-btn:hover {
@@ -549,6 +551,7 @@ template {
     gap: 40px 20px;
   }
 }
+
 .card {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   max-width: 413px;
@@ -621,7 +624,7 @@ template {
   opacity: 0.4;
 }
 
-.card__like-btn_active{
+.card__like-btn_active {
   background-image: url(/images/like.5ba14d29c8f0f8b51069.svg);
   opacity: 0.4;
 }
@@ -641,8 +644,9 @@ template {
     height: 288px;
   }
 }
+
 .footer {
-  background-color: #FCF5E5;
+  background-color: #fcf5e5;
   opacity: 1;
   padding: 60px 20px;
   display: flex;
@@ -660,12 +664,12 @@ template {
   line-height: 1;
   letter-spacing: 0;
   margin: 0;
-
 }
+
 .modal {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   z-index: 1111;
-  padding: 0  10px;
+  padding: 0 10px;
   visibility: hidden;
   background-color: #00000080;
   position: fixed;
@@ -677,8 +681,9 @@ template {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition:visibility 0.5s linear ,opacity 0.5s linear;
-
+  transition:
+    visibility 0.5s linear,
+    opacity 0.5s linear;
 }
 
 .modal_type_preview {
@@ -743,11 +748,11 @@ template {
   transition: opacity 150ms ease;
 }
 
-.modal__close-btn:hover{
+.modal__close-btn:hover {
   opacity: 1;
 }
 
-.modal__title{
+.modal__title {
   margin: 0 0 32px;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
@@ -776,8 +781,7 @@ template {
   font-style: normal;
   font-size: 16px;
   line-height: 1.1;
-  color: #212121B2;
-
+  color: #212121b2;
 }
 
 .modal__input {
@@ -797,8 +801,8 @@ template {
 }
 
 .modal__input_type_error {
-  border: 1px solid #FF000099;
- }
+  border: 1px solid #ff000099;
+}
 
 .modal__input::placeholder {
   color: #2121214d;
@@ -809,13 +813,13 @@ template {
 }
 
 .modal__input_type_error:hover {
-  border: 1px solid #FF0000B2;
+  border: 1px solid #ff0000b2;
   opacity: 0.9;
- }
+}
 
 .modal__error {
   height: 18px;
-  color: #FF0000B2;
+  color: #ff0000b2;
   font-size: 16px;
   margin-top: 8px;
   display: block;
@@ -847,14 +851,15 @@ template {
   padding: 18px 0;
   border: none;
   border-radius: 8px;
-  background-color:  #212121;
+  background-color: #212121;
   color: #fff;
   font-weight: 500;
   cursor: default;
   opacity: 0.5;
 }
 
-#delete-btn, #cancel-btn {
+#delete-btn,
+#cancel-btn {
   width: 156px;
   padding: 18px 0;
   border-radius: 8px;
@@ -862,7 +867,9 @@ template {
   font-size: 16px;
   cursor: pointer;
   border: none;
-  transition: background-color 150ms ease, color 150ms ease;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
 }
 
 #delete-btn {
@@ -909,8 +916,7 @@ template {
   line-height: 1.2;
   color: #ffffff;
   padding: 4px 8px;
-  border-radius:  8px 8px;
-
+  border-radius: 8px 8px;
 }
 
 .modal__form_type_delete {
@@ -1005,9 +1011,9 @@ template {
     gap: 12px;
   }
 
-  #delete-btn, #cancel-btn {
+  #delete-btn,
+  #cancel-btn {
     width: 100%;
   }
-
 }
 
