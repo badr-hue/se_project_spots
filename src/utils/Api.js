@@ -1,4 +1,3 @@
-
 export default class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -13,26 +12,25 @@ export default class Api {
   }
 
   _request(endpoint, options) {
-    return fetch(`${this._baseUrl}${endpoint}`, options).then(this._checkResponse);
+    return fetch(`${this._baseUrl}${endpoint}`, options).then(
+      this._checkResponse,
+    );
   }
 
   getUserInfo() {
     return this._request("/users/me", {
-      headers: this._headers
+      headers: this._headers,
     });
   }
 
   getInitialCards() {
     return this._request("/cards", {
-      headers: this._headers
+      headers: this._headers,
     });
   }
 
   getAppInfo() {
-    return Promise.all([
-      this.getInitialCards(),
-      this.getUserInfo()
-    ]);
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
   editUserInfo({ name, about }) {

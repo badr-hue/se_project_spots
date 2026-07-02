@@ -1,7 +1,7 @@
 .modal {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   z-index: 1111;
-  padding: 0  10px;
+  padding: 0 10px;
   visibility: hidden;
   background-color: #00000080;
   position: fixed;
@@ -13,8 +13,9 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition:visibility 0.5s linear ,opacity 0.5s linear;
-
+  transition:
+    visibility 0.5s linear,
+    opacity 0.5s linear;
 }
 
 .modal_type_preview {
@@ -79,11 +80,11 @@
   transition: opacity 150ms ease;
 }
 
-.modal__close-btn:hover{
+.modal__close-btn:hover {
   opacity: 1;
 }
 
-.modal__title{
+.modal__title {
   margin: 0 0 32px;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
@@ -112,8 +113,7 @@
   font-style: normal;
   font-size: 16px;
   line-height: 1.1;
-  color: #212121B2;
-
+  color: #212121b2;
 }
 
 .modal__input {
@@ -133,8 +133,8 @@
 }
 
 .modal__input_type_error {
-  border: 1px solid #FF000099;
- }
+  border: 1px solid #ff000099;
+}
 
 .modal__input::placeholder {
   color: #2121214d;
@@ -145,13 +145,13 @@
 }
 
 .modal__input_type_error:hover {
-  border: 1px solid #FF0000B2;
+  border: 1px solid #ff0000b2;
   opacity: 0.9;
- }
+}
 
 .modal__error {
   height: 18px;
-  color: #FF0000B2;
+  color: #ff0000b2;
   font-size: 16px;
   margin-top: 8px;
   display: block;
@@ -183,14 +183,15 @@
   padding: 18px 0;
   border: none;
   border-radius: 8px;
-  background-color:  #212121;
+  background-color: #212121;
   color: #fff;
   font-weight: 500;
   cursor: default;
   opacity: 0.5;
 }
 
-#delete-btn, #cancel-btn {
+#delete-btn,
+#cancel-btn {
   width: 156px;
   padding: 18px 0;
   border-radius: 8px;
@@ -198,7 +199,9 @@
   font-size: 16px;
   cursor: pointer;
   border: none;
-  transition: background-color 150ms ease, color 150ms ease;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
 }
 
 #delete-btn {
@@ -245,8 +248,7 @@
   line-height: 1.2;
   color: #ffffff;
   padding: 4px 8px;
-  border-radius:  8px 8px;
-
+  border-radius: 8px 8px;
 }
 
 .modal__form_type_delete {
@@ -341,8 +343,8 @@
     gap: 12px;
   }
 
-  #delete-btn, #cancel-btn {
+  #delete-btn,
+  #cancel-btn {
     width: 100%;
   }
-
 }

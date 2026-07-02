@@ -1,11 +1,10 @@
-
 export const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error"
+  errorClass: "modal__error",
 };
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
@@ -26,7 +25,12 @@ const hideInputError = (formElement, inputElement, config) => {
 
 const checkInputValidity = (formElement, inputElement, config) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage, config);
+    showInputError(
+      formElement,
+      inputElement,
+      inputElement.validationMessage,
+      config,
+    );
   } else {
     hideInputError(formElement, inputElement, config);
   }
@@ -53,7 +57,9 @@ export const disableButton = (buttonElement, config) => {
 };
 
 export const resetValidation = (formElement, config) => {
-  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector),
+  );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
   inputList.forEach((input) => {
@@ -63,7 +69,9 @@ export const resetValidation = (formElement, config) => {
 };
 
 const setEventListeners = (formElement, config) => {
-  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector),
+  );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
   toggleButtonState(inputList, buttonElement, config);
 
