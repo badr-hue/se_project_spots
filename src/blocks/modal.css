@@ -1,7 +1,7 @@
 .modal {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   z-index: 1111;
-  padding: 0  10px;
+  padding: 0 10px;
   visibility: hidden;
   background-color: #00000080;
   position: fixed;
@@ -13,8 +13,9 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition:visibility 0.5s linear ,opacity 0.5s linear;
-
+  transition:
+    visibility 0.5s linear,
+    opacity 0.5s linear;
 }
 
 .modal_type_preview {
@@ -24,6 +25,25 @@
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
+}
+
+.modal__content {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 34px 50px;
+  position: relative;
+  text-align: center;
+}
+
+.modal__content h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  color: #212121;
+  margin: 0 0 32px;
+  font-weight: 500;
 }
 
 .modal__container {
@@ -49,7 +69,6 @@
 }
 
 .modal__close-btn_type_preview {
-  background-image: url(../images/close_prv.svg);
   opacity: 0.4;
   top: 0;
   right: -52.5px;
@@ -60,13 +79,13 @@
   transition: opacity 150ms ease;
 }
 
-.modal__close-btn:hover{
+.modal__close-btn:hover {
   opacity: 1;
 }
 
-.modal__title{
+.modal__title {
   margin: 0 0 32px;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 32px;
@@ -79,16 +98,21 @@
   flex-direction: column;
 }
 
+#delete-form {
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
 .modal__label {
   margin: 0 0 32px;
   display: block;
   font-weight: 500;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 1.1;
-  color: #212121B2;
-
+  color: #212121b2;
 }
 
 .modal__input {
@@ -99,7 +123,7 @@
   border: 1px solid #00000033;
   box-sizing: border-box;
   border-radius: 8px;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
@@ -108,8 +132,8 @@
 }
 
 .modal__input_type_error {
-  border: 1px solid #FF000099;
- }
+  border: 1px solid #ff000099;
+}
 
 .modal__input::placeholder {
   color: #2121214d;
@@ -120,17 +144,17 @@
 }
 
 .modal__input_type_error:hover {
-  border: 1px solid #FF0000B2;
+  border: 1px solid #ff0000b2;
   opacity: 0.9;
- }
+}
 
 .modal__error {
   height: 18px;
-  color: #FF0000B2;
+  color: #ff0000b2;
   font-size: 16px;
   margin-top: 8px;
   display: block;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
 }
 
@@ -158,11 +182,45 @@
   padding: 18px 0;
   border: none;
   border-radius: 8px;
-  background-color:  #212121;
+  background-color: #212121;
   color: #fff;
   font-weight: 500;
   cursor: default;
   opacity: 0.5;
+}
+
+#delete-btn,
+#cancel-btn {
+  width: 156px;
+  padding: 18px 0;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+#delete-btn {
+  background-color: #ff6565;
+  color: #212121;
+}
+
+#delete-btn:hover {
+  background-color: #ff3333;
+}
+
+#cancel-btn {
+  background-color: #fff;
+  color: #212121;
+  border: 1px solid #212121;
+}
+
+#cancel-btn:hover {
+  background-color: #212121;
+  color: #fff;
 }
 
 .modal__image-container {
@@ -189,14 +247,49 @@
   line-height: 1.2;
   color: #ffffff;
   padding: 4px 8px;
-  border-radius:  8px 8px;
-
+  border-radius: 8px 8px;
 }
 
+.modal__form_type_delete {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
+.modal__title_type_delete {
+  font-size: 24px;
+  line-height: 1.2;
+  max-width: 590px;
+  text-align: center;
+}
+
+.modal__submit-delete {
+  background-color: #ff6565;
+  color: #212121;
+}
+
+.modal__submit-delete:hover {
+  background-color: #ff3333;
+}
+
+.modal__submit-cancel {
+  background-color: #fff;
+  color: #212121;
+  border: 1px solid #212121;
+}
+
+.modal__submit-cancel:hover {
+  background-color: #212121;
+  color: #fff;
+}
 
 @media screen and (max-width: 627px) {
   .modal__container {
+    padding: 22px 12px 12px;
+    font-size: 16px;
+  }
+
+  .modal__content {
     padding: 22px 12px 12px;
     font-size: 16px;
   }
@@ -219,6 +312,10 @@
     font-size: 20px;
   }
 
+  .modal__content h2 {
+    font-size: 20px;
+  }
+
   .modal__input {
     font-size: 16px;
   }
@@ -230,5 +327,23 @@
 
   .modal__caption {
     font-size: 16px;
+  }
+
+  .modal__form_type_delete {
+    display: block;
+  }
+
+  .modal__submit-cancel {
+    margin-top: 12px;
+  }
+
+  #delete-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #delete-btn,
+  #cancel-btn {
+    width: 100%;
   }
 }
