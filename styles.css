@@ -525,7 +525,7 @@ template {
 }
 
 .profile__avatar-btn-icon {
-  background-image: url(/images/edit_icon_wht.466fba40d06de23ed0a1.svg);
+  background-image: url(/images/edit_icon_wht.svg);
   width: 16px;
   height: 16px;
 }
@@ -654,7 +654,7 @@ template {
 
 .card__delete-btn {
   z-index: 1;
-  background-image: url(/images/delete.d19faa0112f44e2b6e01.svg);
+  background-image: url(/images/delete.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
@@ -668,7 +668,7 @@ template {
 }
 
 .card__delete-btn:hover {
-  background-image: url(/images/delete_hover.86ae92bd1a937388d496.svg);
+  background-image: url(/images/delete_hover.svg);
   opacity: 0.8;
   transition: opacity 150ms ease;
 }
@@ -681,7 +681,7 @@ template {
 }
 
 .card__like-btn {
-  background-image: url(/images/like_icon.69134273483c4e5472ba.svg);
+  background-image: url(/images/like_icon.svg);
   width: 23px;
   height: 20px;
   background-repeat: no-repeat;
@@ -693,7 +693,7 @@ template {
 }
 
 .card__like-btn_active {
-  background-image: url(/images/like.5ba14d29c8f0f8b51069.svg);
+  background-image: url(/images/like.svg);
   opacity: 0.4;
 }
 
@@ -805,7 +805,6 @@ template {
 }
 
 .modal__close-btn_type_preview {
-  background-image: url(/images/close_icon.9335fea30fb8c9c34f64.svg);
   opacity: 0.4;
   top: 0;
   right: -52.5px;
