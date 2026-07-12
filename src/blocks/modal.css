@@ -69,7 +69,6 @@
 }
 
 .modal__close-btn_type_preview {
-  background-image: url(../images/close_icon.svg);
   opacity: 0.4;
   top: 0;
   right: -52.5px;

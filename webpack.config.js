@@ -47,7 +47,7 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg|webp|ico)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name].[hash][ext]',
+          filename: 'images/[name][ext]',
         },
       },
       // Font handling
